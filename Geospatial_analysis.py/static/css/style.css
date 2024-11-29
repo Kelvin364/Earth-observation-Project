@@ -1,0 +1,189 @@
+body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.header {
+    background: rgba(26, 26, 26, 0.85);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: #00ff8c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo i {
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.brand-name {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #00ff8c;
+}
+
+#map { 
+    height: 100vh;
+    width: 100%; 
+    background: #1a1a1a;
+    z-index: 1;
+}
+
+.toolbar {
+    background: rgba(26, 26, 26, 0.85);
+    padding: 15px;
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    z-index: 1000;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 200px;
+}
+
+.tool-button {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.tool-button:hover {
+    background: rgba(0, 255, 140, 0.2);
+    border-color: #00ff8c;
+}
+
+.tool-button i {
+    margin-right: 10px;
+    color: #00ff8c;
+}
+
+.location-panel {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: rgba(26, 26, 26, 0.85);
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.location-input {
+    padding: 10px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-radius: 6px;
+    width: 220px;
+}
+
+.location-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#coordinates {
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 0.9em;
+    color: #00ff8c;
+}
+
+.error-message {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 59, 48, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    z-index: 2000;
+    display: none;
+}
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(26, 26, 26, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    z-index: 2000;
+    color: #00ff8c;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Existing styles remain */
+
+.risk-assessment-panel {
+    position: fixed;
+    top: 420px;
+    left: 20px;
+    background: rgba(26, 26, 26, 0.85);
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 200px;
+}
+
+.risk-results-panel {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: rgba(26, 26, 26, 0.85);
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 300px;
+    display: none;
+}
+
+.risk-panel-header, .risk-results-header {
+    font-weight: bold;
+    color: #00ff8c;
+    margin-bottom: 10px;
+    text-align: center;
+}

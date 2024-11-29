@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Observation</title>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-satellite"></i>
+            </div>
+            <div class="brand-name">SpaceEARTH EARTH OBSERVATION</div>
+        </div>
+        <div id="coordinates"></div>
+    </div>
+
+    <div id="map"></div>
+    
+    <div class="toolbar">
+        <button class="tool-button" onclick="loadDataset('sentinel2')">
+            <i class="fas fa-satellite"></i> Sentinel-2
+        </button>
+        <button class="tool-button" onclick="loadDataset('landsat9')">
+            <i class="fas fa-globe"></i> Landsat 9
+        </button>
+        <button class="tool-button" onclick="loadDataset('modis_lst')">
+            <i class="fas fa-temperature-high"></i> Temperature
+        </button>
+        <button class="tool-button" onclick="loadDataset('elevation')">
+            <i class="fas fa-mountain"></i> Elevation
+        </button>
+        <button class="tool-button" onclick="loadDataset('landcover')">
+            <i class="fas fa-tree"></i> Land Cover
+        </button>
+        <button class="tool-button" onclick="loadDataset('water')">
+            <i class="fas fa-water"></i> Water
+        </button>
+    </div>
+    <div class="time-control-panel">
+        <input type="date" id="start-date" class="date-input">
+        <input type="date" id="end-date" class="date-input">
+        <button onclick="updateTimeRange()" class="tool-button">
+            <i class="fas fa-calendar-alt"></i> Update Time Range
+        </button>
+    </div>
+
+    <div class="location-panel">
+        <button onclick="useIPLocation()" class="tool-button">
+            <i class="fas fa-location-arrow"></i> Use My Location
+        </button>
+        <input type="text" id="manual-location" class="location-input" 
+               placeholder="Enter lat,lon (e.g., 36.1699,-115.1398)">
+        <button onclick="useManualLocation()" class="tool-button">
+            <i class="fas fa-search-location"></i> Go to Location
+        </button>
+    </div>
+
+    <div class="loading" id="loading">
+        <i class="fas fa-spinner fa-spin"></i> Loading...
+    </div>
+
+    <div class="error-message" id="errorMessage"></div>
+    <div class="risk-assessment-panel">
+        <div class="risk-panel-header">Risk Assessment</div>
+        <button class="tool-button" onclick="calculateLandslideRisk()">
+            <i class="fas fa-mountain"></i> Landslide Risk
+        </button>
+        <button class="tool-button" onclick="calculateFloodRisk()">
+            <i class="fas fa-water"></i> Flood Risk
+        </button>
+        <button class="tool-button" onclick="generateRiskReport()">
+            <i class="fas fa-file-alt"></i> Generate Report
+        </button>
+    </div>
+
+    <div id="risk-results" class="risk-results-panel">
+        <div class="risk-results-header">Risk Analysis Results</div>
+        <div id="risk-summary"></div>
+        <div id="risk-recommendations"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
