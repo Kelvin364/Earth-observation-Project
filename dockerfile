@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy the current directory contents into the container
-COPY Geospatial_analysis.py/* /app
+COPY Geospatial_analysis.py/ /app
 
 # Install Python dependencies from requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
