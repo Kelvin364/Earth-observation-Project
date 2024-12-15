@@ -68,7 +68,7 @@ Start the Flask server:
 bashCopyflask run
 
 Access the application:
-Open your web browser and navigate to http://localhost:5000
+Open your web browser and navigate to https://compact-ant-kelvin1001-4ce1f83f.koyeb.app/login?next=%2F
 
 Usage Guide
 
@@ -105,17 +105,6 @@ GET /: Main application interface
 GET /get_ip_location: Retrieves user's location based on IP
 POST /get_gee_data: Fetches GEE data based on viewport and selected dataset
 
-Project Structure
-Copygee-visualization-platform/
-├── app.py              # Main Flask application
-├── gee.py             # Google Earth Engine interface
-├── templates/
-│   └── index.html     # Main web interface
-├── static/
-│   └── css/
-│       └── style.css
-├── requirements.txt
-└── README.md
 Troubleshooting
 Common issues and solutions:
 
@@ -145,7 +134,7 @@ Leaflet.js for the mapping interface
 Flask framework for the backend implementation
 
 Support
-For support, please open an issue in the repository or contact [your-email@domain.com].
+For support, please open an issue in the repository or contact [kelvin.rwihimba@alustudent.com].
 Future Improvements
 
 Additional dataset support
